@@ -14,21 +14,19 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Project1.View.Controls
+namespace proj12.View.Controls
 {
     /// <summary>
     /// Interaction logic for Joystick.xaml
     /// </summary>
-    /// 
-   
     public partial class Joystick : UserControl
     {
         public delegate void EmptyJoystickEventHandler(Joystick sender);
         public delegate void OnScreenJoystickEventHandler(Joystick sender, VirtualJoystickEventArgs args);
         public event EmptyJoystickEventHandler Released;
-       
+
         public event EmptyJoystickEventHandler Captured;
-        private Point StartingPosition;      
+        private Point StartingPosition;
         private double canvasWidth, canvasHeight;
         private readonly Storyboard centerKnob;
 
@@ -36,7 +34,7 @@ namespace Project1.View.Controls
         {
             InitializeComponent();
 
-            
+
             Knob.MouseMove += KnobMoved;
             Knob.MouseLeftButtonUp += KnobLeft;
             Knob.MouseLeftButtonDown += KnobPressed;
@@ -73,7 +71,7 @@ namespace Project1.View.Controls
 
             Point newPosition = e.GetPosition(Base);
 
-            Point toMove = new Point(newPosition.X - _startPos.X, newPosition.Y - _startPos.Y);
+            Point toMove = new Point(newPosition.X - StartingPosition.X, newPosition.Y - StartingPosition.Y);
 
             double distance = Math.Round(Math.Sqrt(toMove.X * toMove.X + toMove.Y * toMove.Y));
             if (distance >= (canvasHeight / 2) || distance >= (canvasWidth / 2))
@@ -83,24 +81,24 @@ namespace Project1.View.Controls
 
             knobPosition.Y = toMove.Y;
             knobPosition.X = toMove.X;
-                     
+
 
         }
 
-        
+
 
         private void centerKnob_Completed(object sender, EventArgs e)
         {
-           
+
             Released?.Invoke(this);
         }
     }
 
     public class VirtualJoystickEventArgs
     {
-        
-            public double Aileron { get; set; }
-            public double Elevator { get; set; }
-        
+
+        public double Aileron { get; set; }
+        public double Elevator { get; set; }
+
     }
 }

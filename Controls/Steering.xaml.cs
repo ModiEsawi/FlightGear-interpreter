@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Project1.View.Controls
+namespace proj12.View.Controls
 {
     /// <summary>
     /// Interaction logic for Steering.xaml
