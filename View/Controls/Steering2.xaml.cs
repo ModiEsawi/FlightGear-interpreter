@@ -1,6 +1,4 @@
-﻿using proj12.Model;
-using proj12.ViewModel;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,18 +15,14 @@ using System.Windows.Shapes;
 
 namespace proj12.View.Controls
 {
-
-    public partial class DashboardControl : UserControl
+    /// <summary>
+    /// Interaction logic for Steering2.xaml
+    /// </summary>
+    public partial class Steering2 : UserControl
     {
-        private ISimulatorModel model;
-        private DashboardVM dvm;
-        public DashboardControl(ISimulatorModel model)
+        public Steering2()
         {
             InitializeComponent();
-            this.model = model;
-            dvm = new DashboardVM(model);
-            this.DataContext = dvm;
         }
-
     }
 }

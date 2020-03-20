@@ -33,7 +33,7 @@ namespace proj12.View
             this.DataContext = vm;
             db = new DashboardControl(model);
             Grid.SetColumn(db, 1);
-            Grid.SetRow(db, 1);
+            Grid.SetRow(db, 2);
             mainGrid.Children.Add(db);
             model.StartServer();
 

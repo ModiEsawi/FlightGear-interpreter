@@ -11,19 +11,31 @@
             <Setter Property="Margin" Value="4"/>
             <Setter Property="TextAlignment" Value="Center"/>
             <Setter Property="FontFamily" Value="SimSun-ExtB"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontWeight" Value="Bold"/>
 
         </Style>
 
-        <Style x:Key="tbx" TargetType="TextBox">
+        <Style x:Key="valueTB" TargetType="TextBlock">
             <Setter Property="Margin" Value="1.6"/>
-            <Setter Property="BorderBrush" Value="Lavender"/>
             <Setter Property="FontFamily" Value="DFKai-SB"/>
+            <Setter Property="Foreground" Value="White"/>
+
 
 
         </Style>
     </UserControl.Resources>
 
-    <Border BorderThickness="2" BorderBrush="Black" CornerRadius="20" Margin="5" Background="#e6faff">
+    <Border BorderThickness="2" BorderBrush="Black" CornerRadius="20" Margin="5">
+        <Border.Background>
+            <RadialGradientBrush>
+                <GradientStop Color="Black"/>
+                <GradientStop Color="#FF2C2BA8" Offset="1"/>
+                <GradientStop Color="#FE06061E" Offset="0.237"/>
+                <GradientStop Color="#FE242369" Offset="0.806"/>
+            </RadialGradientBrush>
+        </Border.Background>
+
         <Grid Margin="5">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="2*"/>
@@ -45,55 +57,55 @@
                 <TextBlock Text="indicated-heading-deg" Style="{StaticResource tbk}"/>
             </Viewbox>
             <Viewbox Grid.Row="0" Grid.Column="1" Stretch="Uniform">
-                <TextBlock Text="{Binding VM_Indicated_heading_deg}"/>
+                <TextBlock Text="{Binding VM_Indicated_heading_deg}" Style="{StaticResource valueTB}"/>
             </Viewbox>
 
             <Viewbox Grid.Row="1" Grid.Column="0" Stretch="Uniform">
                 <TextBlock Text="gps_indicated-vertical-speed" Style="{StaticResource tbk}"/>
             </Viewbox>
             <Viewbox Grid.Row="1" Grid.Column="1" Stretch="Uniform">
-                <TextBlock  Text="{Binding VM_Gps_indicated_vertical_speed}" />
+                <TextBlock  Text="{Binding VM_Gps_indicated_vertical_speed}" Style="{StaticResource valueTB}" />
             </Viewbox>
 
             <Viewbox Grid.Row="2" Grid.Column="0" Stretch="Uniform">
                 <TextBlock  Text="gps_indicated-ground-speed-kt" Style="{StaticResource tbk}" />
             </Viewbox>
             <Viewbox Grid.Row="2" Grid.Column="1" Stretch="Uniform">
-                <TextBlock Text="{Binding VM_Gps_indicated_ground_speed_kt}" />
+                <TextBlock Text="{Binding VM_Gps_indicated_ground_speed_kt}" Style="{StaticResource valueTB}" />
             </Viewbox>
 
             <Viewbox Grid.Row="3" Grid.Column="0" Stretch="Uniform">
                 <TextBlock  Text="airspeed-indicator_indicated-speed-kt" Style="{StaticResource tbk}" />
             </Viewbox>
             <Viewbox Grid.Row="3" Grid.Column="1" Stretch="Uniform">
-                <TextBlock Text="{Binding VM_Airspeed_indicator_indicated_speed_kt}" />
+                <TextBlock Text="{Binding VM_Airspeed_indicator_indicated_speed_kt}"  Style="{StaticResource valueTB}"/>
             </Viewbox>
 
             <Viewbox Grid.Row="4" Grid.Column="0" Stretch="Uniform" >
                 <TextBlock  Text="gps_indicated-altitude-ft" Style="{StaticResource tbk}"/>
             </Viewbox>
             <Viewbox Grid.Row="4" Grid.Column="1" Stretch="Uniform">
-                <TextBlock Text="{Binding VM_Gps_indicated_altitude_ft}" />
+                <TextBlock Text="{Binding VM_Gps_indicated_altitude_ft}" Style="{StaticResource valueTB}"/>
             </Viewbox>
 
             <Viewbox Grid.Row="5" Grid.Column="0" Stretch="Uniform">
                 <TextBlock Text="attitude-indicator_internal-roll-deg" Style="{StaticResource tbk}" />
             </Viewbox>
             <Viewbox Grid.Row="5" Grid.Column="1" Stretch="Uniform">
-                <TextBlock Text="{Binding VM_Attitude_indicator_internal_roll_deg}"/>
+                <TextBlock Text="{Binding VM_Attitude_indicator_internal_roll_deg}" Style="{StaticResource valueTB}"/>
             </Viewbox>
 
             <Viewbox Grid.Row="6" Grid.Column="0" Stretch="Uniform">
                 <TextBlock Text="attitude-indicator_internal-pitch-deg" Style="{StaticResource tbk}"/>
             </Viewbox>
             <Viewbox Grid.Row="6" Grid.Column="1" Stretch="Uniform">
-                <TextBlock Text="{Binding VM_Attitude_indicator_internal_pitch_deg}" />
+                <TextBlock Text="{Binding VM_Attitude_indicator_internal_pitch_deg}" Style="{StaticResource valueTB}" />
             </Viewbox>
             <Viewbox Grid.Row="7" Grid.Column="0" Stretch="Uniform">
                 <TextBlock Text="altimeter_indicated-altitude-ft" Style="{StaticResource tbk}"/>
             </Viewbox>
             <Viewbox Grid.Row="7" Grid.Column="1" Stretch="Uniform">
-                <TextBlock Text="{Binding VM_Altimeter_indicated_altitude_ft}"  Grid.Row="7" Grid.Column="1" />
+                <TextBlock Text="{Binding VM_Altimeter_indicated_altitude_ft}"  Grid.Row="7" Grid.Column="1"  Style="{StaticResource valueTB}"/>
             </Viewbox>
 
 

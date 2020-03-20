@@ -10,6 +10,7 @@ namespace proj12.Model
 {
     class SimulatorModel : ISimulatorModel
     {
+    
         Dictionary<int, string> genericsTable = new Dictionary<int, string>()
             {
                 {0,"/instrumentation/airspeed-indicator/indicated-speed-kt"},
