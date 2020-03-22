@@ -1,0 +1,21 @@
+<Window x:Class="BingMap.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BingMap"
+        xmlns:m="clr-namespace:Microsoft.Maps.MapControl.WPF;assembly=Microsoft.Maps.MapControl.WPF"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800"
+        ContentRendered ="StartMoving">
+    <!--CredentialsProvider="ArSwi1GT_7KbaRr8xv2iBoirSPgADnHQtVPKxadfYXIH8R25dEfuQohinuBBPCdT"  -->
+    <Grid x:Name="LayoutRoot" Background="White">
+        <m:Map x:Name="BingBigMap" CredentialsProvider="ArSwi1GT_7KbaRr8xv2iBoirSPgADnHQtVPKxadfYXIH8R25dEfuQohinuBBPCdT" 
+               Center="32.0055,34.8854" ZoomLevel="6">
+            <m:Pushpin x:Name="PlanePin" Background="White" m:MapLayer.Position="{Binding Location , UpdateSourceTrigger=PropertyChanged, Mode=OneWay}">
+                <Image Source="planeIcon.png"/>
+            </m:Pushpin>
+        </m:Map>
+    </Grid>
+    
+</Window>
