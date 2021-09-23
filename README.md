@@ -176,7 +176,7 @@ Print("done")
 ## Explanation
 
 What's happening here is that once we run our executable, first it will read the script file that is provided as a parameter, parses it, and starts interpreting it, in our case the script file contains some commands which will be used in order to open a server and connect to FlightGear. 
-After that, it'll create a TCP server that listens on port 5400, at the same time the client (C++) will try to connect to FlightGear on port 5402.
+After that, it will create a TCP server that listens on port 5400, at the same time the client (C++) will try to connect to FlightGear on port 5402.
 
 Once FlightGear connects to the server (C++) and the client (C++) connects to FlightGear, FlightGear will start streaming data through the TCP connection, where the server will then parses it and store it in memory for use with the script later.
 
