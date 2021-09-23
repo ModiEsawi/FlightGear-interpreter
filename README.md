@@ -180,4 +180,4 @@ After that, it'll create a TCP server that listens on port 5400, at the same tim
 
 Once FlightGear connects to the server (C++) and the client (C++) connects to FlightGear, FlightGear will start streaming data through the TCP connection, where the server will then parses it and store it in memory for use with the script later.
 
-Then at some port it'll wait for a total of 120 seconds (to make sure that it's loaded first), after that it'll setup the plane parameters to the correct values in order to let it fly, then it goes full throttle and flies the plane until it reaches a specific height, and then the script finishes.
+Then at some port it will wait for a total of 120 seconds (to make sure that it's loaded first), after that it'll setup the plane parameters to the correct values in order to let it fly, then it goes full throttle and flies the plane until it reaches a specific height, and then the script finishes.
